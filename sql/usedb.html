@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Using Database</b></h3>
+    To use a database in MySQL, you can use the following SQL statement:
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    USE database_name;
+    <br><br>
+    Replace database_name with the name of the database you want to use(make sure it is available). Here's an example of
+    using a database named school:
+    <br><br>
+    <h3 style="text-align: center;"><b>Query</b></h3>
+    SHOW DATABASES;<br><br>
+    <table>
+        <tr>
+            <th>
+                <b>Database</b>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                information_schema
+            </th>
+        </tr>
+        <tr>
+            <th>
+                mysql
+
+
+
+            </th>
+        </tr>
+        <tr>
+            <th>
+                performance_schema
+            </th>
+        </tr>
+        <tr>
+            <th>
+                school
+            </th>
+        </tr>
+        <tr>
+            <th>
+                sys
+            </th>
+        </tr>
+    </table>
+    <br>
+    USE school;
+    <br>
+    Database changed
+</body>
+
+</html>

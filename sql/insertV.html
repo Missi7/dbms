@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Inserting value into Table</b></h3>
+    To insert data into a MySQL table, you use the INSERT INTO statement. Here's the basic syntax:
+
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    <b>Inserting all values of a row</b><br>
+    INSERT INTO table_name VALUES (value1, value2, ...);
+    <br><br>
+    <b>Inserting particular values of a row</b><br>
+    INSERT INTO table_name(column1, column3, ...) VALUES (value1, value3, ... );
+    <br><br>
+    <b>Inserting Multiple rows</b><br>
+    INSERT INTO table_name VALUES (value1, value2, ...), (value1, value2, ...), (value1, value2, ...);
+    <br>
+    <br>
+    Example Table : student
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>PhoneNo</th>
+        </tr>
+    </table>
+    <h3 style="text-align: center;"><b>Query</b></h3>
+    INSERT INTO student VALUES ('4201', "Misbah", "9465470628");
+    <br><br>
+    <table>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>PhoneNo</th>
+        </tr>
+        <tr>
+            <td>4226</td>
+            <td>Misbah</td>
+            <td>9465470628</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    INSERT INTO student(RollNo, Name) VALUES ('4258', "Aman");
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>PhoneNo</th>
+        </tr>
+        <tr>
+            <td>4226</td>
+            <td>Misbah</td>
+            <td>9465470628</td>
+        </tr>
+        <tr>
+            <td>4258</td>
+            <td>Aman</td>
+            <td>NULL</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    INSERT INTO student VALUES ('4211', "Neha", "1656746517"), ('4237', "Pawan", "123456789");
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>PhoneNo</th>
+        </tr>
+        <tr>
+            <td>4226</td>
+            <td>Misbah</td>
+            <td>9465470628</td>
+        </tr>
+        <tr>
+            <td>4258</td>
+            <td>Aman</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>4211</td>
+            <td>Neha</td>
+            <td>1656746517</td>
+        </tr>
+        <tr>
+            <td>4237</td>
+            <td>Pawan</td>
+            <td>123456789</td>
+        </tr>
+    </table>
+</body>
+
+</html>

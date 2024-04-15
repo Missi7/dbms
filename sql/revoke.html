@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Revoking Permissions from users</b></h3>
+    In MySQL, the REVOKE statement is used to revoke previously granted privileges from users or roles. It effectively
+    removes specific privileges from a user, limiting their access to certain databases, tables, or columns. Here's the
+    basic syntax:
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    REVOKE privileges ON database_name.table_name FROM 'user'@'host';
+    <br><br>
+    Replace privileges with the specific privileges you want to revoke, database_name.table_name with the name of the
+    database and table (or * for all tables) you want to revoke access from, and 'user'@'host' with the username and
+    host for the user you want to revoke access from.
+    <br><br>
+    <h3 style="text-align: center;"><b>Examples</b></h3>
+    <b>1.</b> Example to revoke SELECT privileges on all tables in the school database to a user named 'john' from
+    localhost:
+
+    REVOKE SELECT ON school.* TO 'john'@'localhost';
+    <br><br>
+    <b>2.</b> Example to revoke multiple privileges at once:
+
+    REVOKE SELECT, INSERT, UPDATE ON school.* TO 'john'@'localhost';
+    <br><br>
+    <b>3.</b> Example to revoke all privileges on all tables in the school database to a user named 'john' from
+    localhost:
+
+    REVOKE ALL PRIVILEGES ON school.* TO 'john'@'localhost';
+    <br><br>
+    <b>4.</b> Example to revoke all privileges on all databases to a user named 'john' from localhost:
+
+    REVOKE ALL PRIVILEGES ON *.* TO 'john'@'localhost';
+</body>
+
+</html>

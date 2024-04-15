@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Functions in PL/SQL</b></h3>
+    In PL/SQL, functions are named PL/SQL blocks that can accept parameters, perform a specific task, and return a
+    value. They are similar to procedures but differ in that they always return a single value. Functions are often used
+    to encapsulate reusable logic and calculations, making code more modular and easier to maintain. Here's an overview
+    of functions in PL/SQL:
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax for Creating</b></h3>
+    CREATE [OR REPLACE] FUNCTION function_name<br>
+    (parameter1 datatype1, parameter2 datatype2, ...)<br>
+    RETURN return_datatype<br>
+    IS<br>
+    -- Declarations<br>
+    BEGIN<br>
+    -- Logic<br>
+    RETURN value_to_return;<br>
+    END;<br><br>
+    <h3 style="text-align: center;"><b>Syntax for Calling</b></h3>
+    function_name(value1, value2, ...);<br><br>
+</body>
+
+</html>

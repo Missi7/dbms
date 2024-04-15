@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Transaction Management</b></h3>
+    Transaction management in MySQL allows you to group multiple SQL statements into a single unit of work, ensuring
+    that either all the statements are executed successfully or none of them are applied. This helps maintain data
+    integrity and consistency within the database. MySQL supports transaction management using the START TRANSACTION,
+    COMMIT, and ROLLBACK statements.
+    <br><br>
+    <h3 style="text-align: center;"><b>Starting New Transaction:</b></h3>
+    START TRANSACTION;
+    <br>
+    This statement marks the beginning of a transaction. It signifies the start of a sequence of SQL statements that
+    will be treated as a single unit of work.
+    <br><br>
+    <h3 style="text-align: center;"><b>Commiting Changes in Transaction:</b></h3>
+    COMMIT;
+    <br>
+    This statement permanently saves the changes made during the current transaction. Once committed, the changes become
+    visible to other database sessions.
+    <br><br>
+    <h3 style="text-align: center;"><b>Roll back changes in Transaction:</b></h3>
+    ROLLBACK;
+    <br>
+    This statement rolls back (undoes) any changes made during the current transaction. It effectively cancels the
+    transaction and restores the database to its state before the transaction began.
+    <br><br>
+    <h3 style="text-align: center;"><b>Example of using Commit/Rollback</b></h3>
+    Here's an example of how you might use these statements together:
+    <br><br>
+    Example Table : student
+    <br><br>
+    <table>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>PhoneNo</th>
+            <th>Class</th>
+            <td>Marks</td>
+            <td>City</td>
+        </tr>
+        <tr>
+            <td>4226</td>
+            <td>Misbah</td>
+            <td>9465470628</td>
+            <td>BCA-I</td>
+            <td>374</td>
+            <td>Chandigarh</td>
+        </tr>
+        <tr>
+            <td>4258</td>
+            <td>Aman</td>
+            <td>NULL</td>
+            <td>BCA-I</td>
+            <td>284</td>
+            <td>Punjab</td>
+        </tr>
+        <tr>
+            <td>4211</td>
+            <td>Neha</td>
+            <td>1656746517</td>
+            <td>BCA-I</td>
+            <td>294</td>
+            <td>Punjab</td>
+        </tr>
+        <tr>
+            <td>4237</td>
+            <td>Pawan Kumar</td>
+            <td>123456789</td>
+            <td>BCA-I</td>
+            <td>274</td>
+            <td>Punjab</td>
+        </tr>
+    </table>
+    <br><br>
+    <h3 style="text-align: center;"><b>Query</b></h3>
+    START TRANSACTION;
+    <br>
+    UPDATE student SET marks = marks + 10 where marks < 290; COMMIT; ROLLBACK;<br><br>
+        <table>
+            <tr>
+                <th>RollNo</th>
+                <th>Name</th>
+                <th>PhoneNo</th>
+                <th>Class</th>
+                <td>Marks</td>
+                <td>City</td>
+            </tr>
+            <tr>
+                <td>4258</td>
+                <td>Aman</td>
+                <td>NULL</td>
+                <td>BCA-I</td>
+                <td>294</td>
+                <td>Punjab</td>
+            </tr>
+            <tr>
+                <td>4237</td>
+                <td>Pawan Kumar</td>
+                <td>123456789</td>
+                <td>BCA-I</td>
+                <td>284</td>
+                <td>Punjab</td>
+            </tr>
+        </table>
+        <br><br>
+        START TRANSACTION;
+        <br>
+        UPDATE student SET marks = marks + 10 where marks < 290; <br>
+            ROLLBACK;
+            <br>
+            COMMIT;
+            <br>
+            SELECT * FROM student;
+            <br><br>
+            <table>
+                <tr>
+                    <th>RollNo</th>
+                    <th>Name</th>
+                    <th>PhoneNo</th>
+                    <th>Class</th>
+                    <td>Marks</td>
+                    <td>City</td>
+                </tr>
+                <tr>
+                    <td>4226</td>
+                    <td>Misbah</td>
+                    <td>9465470628</td>
+                    <td>BCA-I</td>
+                    <td>374</td>
+                    <td>Chandigarh</td>
+                </tr>
+                <tr>
+                    <td>4258</td>
+                    <td>Aman</td>
+                    <td>NULL</td>
+                    <td>BCA-I</td>
+                    <td>284</td>
+                    <td>Punjab</td>
+                </tr>
+                <tr>
+                    <td>4211</td>
+                    <td>Neha</td>
+                    <td>1656746517</td>
+                    <td>BCA-I</td>
+                    <td>294</td>
+                    <td>Punjab</td>
+                </tr>
+                <tr>
+                    <td>4237</td>
+                    <td>Pawan Kumar</td>
+                    <td>123456789</td>
+                    <td>BCA-I</td>
+                    <td>274</td>
+                    <td>Punjab</td>
+                </tr>
+            </table>
+</body>
+
+</html>

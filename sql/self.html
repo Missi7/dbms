@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Self Join</b></h3>
+    A self-join is a type of join in SQL where a table is joined with itself. This is useful when you want to compare
+    rows within the same table based on some condition. There are different types of self-joins, depending on the
+    criteria used for comparison:
+    <br><br>
+
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    SELECT columns FROM columns FROM table_name t1 JOIN table_name t2 ON t1.common_column = t2.common_column;;
+    <br><br>
+    <table>
+        <tr><b>
+                <th>CustomerID</th>
+                <th>CustomerName</th>
+                <th>ContactNo</th>
+                <th>Country</th>
+            </b>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Misbah</td>
+            <td>9465470628</td>
+            <td>India</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Aman</td>
+            <td>4561237892</td>
+            <td>Canada</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Pawan Kumar</td>
+            <td>2356897548</td>
+            <td>Nepal</td>
+        </tr>
+    </table>
+    <h3 style="text-align: center;"><b>Query</b></h3>
+    Query
+    SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2 FROM Customers A, Customers B WHERE
+    A.CustomerID <> B.CustomerID;
+        <br><br>
+        <table>
+            <tr>
+                <th>customerI</th>
+                <th>customerII</th>
+            </tr>
+            <tr>
+                <td>Pawan Kumar</td>
+                <td>Misbah</td>
+            </tr>
+            <tr>
+                <td>Aman</td>
+                <td>Misbah</td>
+            </tr>
+            <tr>
+                <td>Pawan Kumar</td>
+                <td>Aman</td>
+            </tr>
+            <tr>
+                <td>Misbah</td>
+                <td>Aman</td>
+            </tr>
+            <tr>
+                <td>Aman</td>
+                <td>Pawan Kumar</td>
+            </tr>
+            <tr>
+                <td>Misbah</td>
+                <td>Pawan Kumar</td>
+            </tr>
+        </table>
+</body>
+
+</html>
+<!-- file:///C:/Users/HP/OneDrive/Desktop/code-where/code/mysql.html# -->

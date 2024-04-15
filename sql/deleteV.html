@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Deleting Row(s) from Table</b></h3>
+    To delete data from a MySQL table, you use the DELETE FROM statement. Here's the basic syntax:
+
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    <b>Deleting all rows</b><br>
+    DELETE FROM table_name;
+    <br><br>
+    <b>Deleting a particular row</b><br>
+    DELETE FROM table_name WHERE condition;
+    <br><br>
+    Example Table : student
+    <br><br>
+    <table>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>PhoneNo</th>
+
+        </tr>
+        <tr>
+            <td>4226</td>
+            <td>Misbah</td>
+            <td>9465470628</td>
+
+        </tr>
+        <tr>
+            <td>4258</td>
+            <td>Aman</td>
+            <td>NULL</td>
+
+        </tr>
+        <tr>
+            <td>4211</td>
+            <td>Neha</td>
+            <td>1656746517</td>
+
+        </tr>
+        <tr>
+            <td>4237</td>
+            <td>Pawan</td>
+            <td>123456789</td>
+
+        </tr>
+    </table>
+    <h3 style="text-align: center;"><b>Query</b></h3>
+    DELETE FROM student WHERE rollNo = "4237";<br><br>
+    <table>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>PhoneNo</th>
+        </tr>
+        <tr>
+            <td>4226</td>
+            <td>Misbah</td>
+            <td>9465470628</td>
+        </tr>
+        <tr>
+            <td>4258</td>
+            <td>Aman</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>4211</td>
+            <td>Neha</td>
+            <td>1656746517</td>
+        </tr>
+    </table>
+    <br><br>DELETE FROM student;<br><br>
+    <table>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>PhoneNo</th>
+        </tr>
+    </table>
+
+</body>
+
+</html>

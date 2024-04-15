@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Selecting values</b></h3>
+    To select data from a MySQL table, you use the SELECT statement. Here's the basic syntax:
+
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    <b>Selecting values of particular column(s)</b><br>
+    SELECT column1, column2, ... FROM table_name;
+    <br><br>
+    <b>Selecting values of every column</b><br>
+    SELECT * FROM table_name;
+    <br><br>
+    Example Table : student
+    <br><br>
+    <table>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>PhoneNo</th>
+            <th>Class</th>
+            <td>Marks</td>
+            <td>City</td>
+        </tr>
+        <tr>
+            <td>4226</td>
+            <td>Misbah</td>
+            <td>9465470628</td>
+            <td>BCA-I</td>
+            <td>374</td>
+            <td>Chandigarh</td>
+        </tr>
+        <tr>
+            <td>4258</td>
+            <td>Aman</td>
+            <td>NULL</td>
+            <td>BCA-I</td>
+            <td>284</td>
+            <td>Punjab</td>
+        </tr>
+        <tr>
+            <td>4211</td>
+            <td>Neha</td>
+            <td>1656746517</td>
+            <td>BCA-I</td>
+            <td>294</td>
+            <td>Punjab</td>
+        </tr>
+        <tr>
+            <td>4237</td>
+            <td>Pawan Kumar</td>
+            <td>123456789</td>
+            <td>BCA-I</td>
+            <td>274</td>
+            <td>Punjab</td>
+        </tr>
+    </table>
+    <h3 style="text-align: center;"><b>Query</b></h3>
+    SELECT Name, PhoneNo FROM student;
+    <br><br>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>PhoneNo</th>
+        </tr>
+        <tr>
+            <td>Misbah</td>
+            <td>9465470628</td>
+        </tr>
+        <tr>
+            <td>Aman</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>Neha</td>
+            <td>1656746517</td>
+        </tr>
+        <tr>
+            <td>Pawan Kumar</td>
+            <td>123456789</td>
+        </tr>
+    </table>
+    <br><br>SELECT * FROM student;<br><br>
+    <table>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>PhoneNo</th>
+            <th>Class</th>
+            <td>Marks</td>
+            <td>City</td>
+        </tr>
+        <tr>
+            <td>4226</td>
+            <td>Misbah</td>
+            <td>9465470628</td>
+            <td>BCA-I</td>
+            <td>374</td>
+            <td>Chandigarh</td>
+        </tr>
+        <tr>
+            <td>4258</td>
+            <td>Aman</td>
+            <td>NULL</td>
+            <td>BCA-I</td>
+            <td>284</td>
+            <td>Punjab</td>
+        </tr>
+        <tr>
+            <td>4211</td>
+            <td>Neha</td>
+            <td>1656746517</td>
+            <td>BCA-I</td>
+            <td>294</td>
+            <td>Punjab</td>
+        </tr>
+        <tr>
+            <td>4237</td>
+            <td>Pawan Kumar</td>
+            <td>123456789</td>
+            <td>BCA-I</td>
+            <td>274</td>
+            <td>Punjab</td>
+        </tr>
+    </table>
+</body>
+
+
+</html>

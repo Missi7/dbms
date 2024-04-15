@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Cursors in PL/SQL</b></h3>
+    In the context of databases and SQL, a cursor is a database object used to retrieve and manipulate data from a
+    result set returned by a SQL query. Cursors provide a way to iterate over the rows of a result set one at a time,
+    enabling programmatic control over data retrieval and manipulation. Here's an explanation of cursors:
+
+    There are two types of Cursors:
+    1) Implicit Cursors 2) Explicit Cursors
+
+    <h3 style="text-align: center;"><b>Attributes of cursors</b></h3>
+    <table>
+        <tr>
+            <b>
+                <th>Attributes</th>
+                <th>Description</th>
+            </b>
+        </tr>
+        <tr>
+            <td>%FOUND </td>
+            <td>Returns TRUE if a fetch operation successfully retrieves a row.</td>
+        </tr>
+        <tr>
+            <td>%NOTFOUND </td>
+            <td>Returns TRUE if a fetch operation fails to retrieve a row</td>
+        </tr>
+        <tr>
+            <td>%ROWCOUNT </td>
+            <td>Returns the number of rows fetched so far.</td>
+        </tr>
+        <tr>
+            <td>%ISOPEN </td>
+            <td>Returns TRUE if the cursor is open, FALSE if closed.</td>
+        </tr>
+    </table>
+    <h3 style="text-align: center;"><b>Basic Functionality :</b></h3>
+    <b><u>Initialization :</u></b> Cursors are initialized with a SQL query that defines the result set to be processed.
+    <br><br>
+    <b><u>Execution :</u></b> After initialization, the cursor is executed, and the query is executed against the
+    database to fetch
+    the result set.
+    <br><br>
+    <b><u>Iteration :</u></b> Cursors allow the program to fetch rows from the result set one at a time. The cursor
+    keeps track of the
+    current position within the result set.
+    <br><br>
+    <b><u>Processing :</u></b> Each fetched row can be processed individually within the program. This includes reading
+    the values of
+    columns, performing calculations, and executing further logic based on the row's data.
+    <br><br>
+    <b><u>Termination :</u></b> Cursors are typically closed once all rows in the result set have been processed.
+    Closing the cursor
+    releases associated resources and frees up database server memory.
+    <br><br>
+    <h3 style="text-align: center;"><b>Cursor Operations :</b></h3>
+    <b><u>Opening :</u></b> The cursor is opened to execute the associated SQL query and fetch the result set.
+    <br><br>
+    <b><u>Fetching :</u></b> Rows from the result set are retrieved one by one using the FETCH statement. Each fetch
+    operation
+    advances the cursor to the next row.
+    <br><br>
+    <b><u>Closing :</u></b> Once all rows have been processed, or when no longer needed, the cursor is closed using the
+    CLOSE
+    statement. This releases database resources associated with the cursor.<h3 style="text-align: center;"><b></b></h3>
+</body>
+
+</html>

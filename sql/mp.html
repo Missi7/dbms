@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>String Pattern Matching in MySQL</b></h3>
+    In MySQL, you can use the LIKE operator along with wildcard characters to match patterns in strings. Here's how you
+    can use it:
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    SELECT * FROM table_name WHERE column_name LIKE 'pattern';
+    <br><br>
+    <table>
+        <tr>
+            <th>character Description</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>% (Percent)
+            </td>
+            <td>Represents zero or more characters</td>
+        </tr>
+        <tr>
+            <td> _ (Underscore)</td>
+            <td>Represents a single character</td>
+        </tr>
+
+    </table>
+    <br><br>Example Table : student<br><br>
+    <table>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>PhoneNo</th>
+            <th>Class</th>
+            <td>Marks</td>
+            <td>City</td>
+        </tr>
+        <tr>
+            <td>4226</td>
+            <td>Misbah</td>
+            <td>9465470628</td>
+            <td>BCA-I</td>
+            <td>374</td>
+            <td>Chandigarh</td>
+        </tr>
+        <tr>
+            <td>4258</td>
+            <td>Aman</td>
+            <td>NULL</td>
+            <td>BCA-I</td>
+            <td>284</td>
+            <td>Punjab</td>
+        </tr>
+        <tr>
+            <td>4211</td>
+            <td>Neha</td>
+            <td>1656746517</td>
+            <td>BCA-I</td>
+            <td>294</td>
+            <td>Punjab</td>
+        </tr>
+        <tr>
+            <td>4237</td>
+            <td>Pawan Kumar</td>
+            <td>123456789</td>
+            <td>BCA-I</td>
+            <td>274</td>
+            <td>Punjab</td>
+        </tr>
+    </table>
+    <h3 style="text-align: center;"><b>Query</b></h3>
+    SELECT Name, PhoneNo FROM student WHERE PhoneNo LIKE "9%";<br><br>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>PhoneNo</th>
+        </tr>
+        <tr>
+            <td>Misbah</td>
+            <td>9465470628</td>
+        </tr>
+    </table>
+    <br><br>SELECT Name, PhoneNo FROM student WHERE PhoneNo LIKE "A_n%";<br><br>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>PhoneNo</th>
+        </tr>
+        <tr>
+            <td>Aman</td>
+            <td>NULL</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

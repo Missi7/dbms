@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Updating Columns of Tables</b></h3>
+    To update (modify) a column in an existing table in MySQL, you can use the ALTER TABLE statement with the MODIFY
+    COLUMN clause. Here's the basic syntax:
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    ALTER TABLE table_name MODIFY COLUMN column_name new_datatype [new_constraints];
+    <br><br>
+    <h3 style="text-align: center;"><b>Query</b></h3>
+    DESC student;
+    <br><br>
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Key </th>
+            <th>Default</th>
+            <th>Extra</th>
+        </tr>
+        <tr>
+            <td>RollNo</td>
+            <td>int</td>
+            <td>NO</td>
+            <td>PRI</td>
+            <td>NULL</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Name </td>
+            <td>varchar(50)</td>
+            <td>YES </td>
+            <td></td>
+            <td> NULL</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>PhoneNo </td>
+            <td>varchar(10)</td>
+            <td>YES </td>
+            <td></td>
+            <td>NULL</td>
+            <td></td>
+        </tr>
+
+
+    </table>
+    <br><br>
+    ALTER TABLE student MODIFY COLUMN RollNo varchar(10);
+    <br><br>
+    Query OK, 0 rows affected (0.10 sec)<br>
+    Records: 0 Duplicates: 0 Warnings: 0<br><br>
+
+    DESC student;
+    <br><br>
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Key </th>
+            <th>Default</th>
+            <th>Extra</th>
+        </tr>
+        <tr>
+            <td>RollNo</td>
+            <td>varchar(10)</td>
+            <td>NO</td>
+            <td>PRI</td>
+            <td>NULL</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Name </td>
+            <td>varchar(50)</td>
+            <td>YES </td>
+            <td></td>
+            <td> NULL</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>PhoneNo </td>
+            <td>varchar(10)</td>
+            <td>YES </td>
+            <td></td>
+            <td>NULL</td>
+            <td></td>
+        </tr>
+
+
+    </table>
+</body>
+
+</html>

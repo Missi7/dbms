@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Deleting Views</b></h3>
+    Here's how you can delete a view in MySQL:
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    DROP VIEW view_name;
+    <br><br>
+    Example View : failStudents
+    <br><br>
+    <table>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>PhoneNo</th>
+            <th>Class</th>
+            <td>Marks</td>
+            <td>City</td>
+        </tr>
+        <tr>
+            <td>4237</td>
+            <td>Pawan Kumar</td>
+            <td>123456789</td>
+            <td>BCA-I</td>
+            <td>174</td>
+            <td>Punjab</td>
+        </tr>
+    </table>
+    <h3 style="text-align: center;"><b>Query</b></h3>
+    DROP VIEW failStudents;
+    <br><br>
+    Query OK, 0 rows affected (0.01 sec)
+</body>
+
+</html>

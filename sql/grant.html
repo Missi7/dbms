@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Granting Permissions to users</b></h3>
+    In MySQL, the GRANT statement is used to grant specific privileges to database users or roles. These privileges can
+    include various permissions such as SELECT, INSERT, UPDATE, DELETE, and more. Here's the basic syntax:
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    GRANT privileges ON database_name.table_name TO 'user'@'host';
+    <br><br>
+    Replace privileges with the specific privileges you want to grant, database_name.table_name with the name of the
+    database and table (or * for all tables) you want to grant access to, and 'user'@'host' with the username and host
+    for the user you want to grant access to.
+    <br><br>
+    <h3 style="text-align: center;"><b>Examples</b></h3>
+    <b>1.</b> Example to grant SELECT privileges on all tables in the school database to a user named 'john' from
+    localhost:
+
+    GRANT SELECT ON school.* TO 'john'@'localhost';
+    <br><br>
+    <b>2.</b> Example to grant multiple privileges at once:
+
+    GRANT SELECT, INSERT, UPDATE ON employees.* TO 'john'@'localhost';
+    <br><br>
+    <b>3.</b> Example to grant all privileges on all tables in the school database to a user named 'john' from
+    localhost:
+
+    GRANT ALL PRIVILEGES ON school.* TO 'john'@'localhost';
+    <br><br>
+    <b>4.</b> Example to grant all privileges on all databases to a user named 'john' from localhost:
+
+    GRANT ALL PRIVILEGES ON *.* TO 'john'@'localhost';
+</body>
+
+</html>

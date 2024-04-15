@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Showing Tables</b></h3>
+    To show the list of tables in a particular database of MySQL, you can use the SHOW TABLES; command. Here's how you
+    would do it:
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    SHOW TABLES;
+    <br><br>
+    <h3 style="text-align: center;"><b>Query</b></h3>
+    USE school;
+    <br><br>
+    Database changed
+    <br><br>
+    <b>SHOW TABLES;</b>
+    <br><br>
+    <table>
+        <tr>
+            <th>
+                <b>Tables_in_school</b>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                student
+            </td>
+        </tr>
+        <tr>
+            <td>
+                course
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

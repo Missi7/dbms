@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Droping Tables</b></h3>
+    To drop a table in MySQL, you use the DROP TABLE statement followed by the name of the table you want to delete.
+    Here's the basic syntax:
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    DROP TABLE table_name;
+    <br><br>
+    <h3 style="text-align: center;"><b> Query</b></h3>
+    USE school;
+    <br><br>
+    Database changed
+    <br><br>
+    SHOW TABLES;
+    <br><br>
+    <table>
+        <tr>
+            <th>
+                <b>Tables_in_school</b>
+            </th>
+        </tr>
+        <tr>
+            <td>student</td>
+        </tr>
+        <tr>
+            <td>
+                course
+            </td>
+        </tr>
+        <tr>
+            <td>
+                temporary
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    DROP TABLE temporary;
+    <br><br>
+    Query OK, 0 rows affected (0.08 sec)
+</body>
+
+</html>

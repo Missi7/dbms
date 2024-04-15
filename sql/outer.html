@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Outer Joins</b></h3>
+    Outer joins in SQL are used to retrieve data from multiple tables while also including unmatched rows from one or
+    both tables in the result set. There are two main types of outer joins:
+    <br><br>
+    <b><u>LEFT OUTER JOIN (or LEFT JOIN) :</u></b> A left outer join returns all rows from the left table (the first
+    table mentioned
+    in the query), and the matched rows from the right table. If there are no matching rows in the right table, NULL
+    values are returned for the columns from the right table.
+
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    SELECT columns FROM table1 LEFT OUTER JOIN table2 ON table1.column_name = table2.column_name;
+    <br><br>
+    <b><u>RIGHT OUTER JOIN (or RIGHT JOIN) :</u></b> A right outer join returns all rows from the right table (the
+    second table
+    mentioned in the query), and the matched rows from the left table. If there are no matching rows in the left table,
+    NULL values are returned for the columns from the left table.
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    SELECT columns FROM table1 RIGHT OUTER JOIN table2 ON table1.column_name = table2.column_name;
+    <br><br>
+    Example table :Orders
+    <br><br>
+    <table>
+        <tr><b>
+                <th>CustomerID</th>
+                <th>CustomerName</th>
+                <th>ContactNo</th>
+                <th>Country</th>
+            </b>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Misbah</td>
+            <td>9465470628</td>
+            <td>India</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Aman</td>
+            <td>4561237892</td>
+            <td>Canada</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Pawan Kumar</td>
+            <td>2356897548</td>
+            <td>Nepal</td>
+        </tr>
+    </table>
+    <br><br>Example table :Orders<br><br>
+    <table>
+        <tr>
+            <b>
+                <th>OrderId</th>
+                <th>CustomerID</th>
+                <th>OrderDate</th>
+            </b>
+        </tr>
+        <tr>
+            <td>10308</td>
+            <td>2</td>
+            <td>1996-09-18</td>
+
+        </tr>
+        <tr>
+            <td>10309</td>
+            <td>37</td>
+            <td>1996-09-19</td>
+
+        </tr>
+        <tr>
+            <td>10310</td>
+            <td>77</td>
+            <td>1996-09-20</td>
+
+        </tr>
+    </table>
+    <h3 style="text-align: center;"><b>Query</b></h3>
+
+    SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders LEFT OUTER JOIN Customers ON
+    Orders.customerID=Customers.customerID;
+    <br><br>
+    <table>
+        <tr>
+            <th>OrderID</th>
+            <th>CustomerName</th>
+            <th>OrderDate</th>
+        </tr>
+        <tr>
+            <td>10308</td>
+            <td>Aman</td>
+            <td>1996-09-18</td>
+
+        </tr>
+        <tr>
+            <td>10309</td>
+            <td>NULL</td>
+            <td>1996-09-19</td>
+
+        </tr>
+        <tr>
+            <td>10310</td>
+            <td>NULL</td>
+            <td>1996-09-20</td>
+
+        </tr>
+    </table>
+    <br><br>
+    SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders RIGHT OUTER JOIN Customers ON
+    Orders.customerID=Customers.customerID;
+    <br><br>
+    <table>
+        <tr>
+            <th>OrderID</th>
+            <th>CustomerName</th>
+            <th>OrderDate</th>
+        </tr>
+        <tr>
+            <td>NULL</td>
+            <td>Misbah</td>
+            <td>NULL</td>
+
+        </tr>
+        <tr>
+            <td>10308</td>
+            <td>Aman</td>
+            <td>1996-09-18</td>
+
+        </tr>
+        <tr>
+            <td>NULL</td>
+            <td>Pawan Kumar</td>
+            <td>NULL</td>
+
+        </tr>
+    </table>
+</body>
+
+</html>

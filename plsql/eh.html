@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3 style="text-align: center;"><b>Exception Handling in PL/SQL</b></h3>
+    Exception handling in PL/SQL allows you to handle errors gracefully and maintain control over the flow of your
+    program. It enables you to catch and handle errors that occur during the execution of your code. Here's an overview
+    of exception handling in PL/SQL:
+
+    <h3 style="text-align: center;"><b>Types of Exceptions :</b></h3>
+    <b>Predefined Exceptions:</b> These are exceptions defined by Oracle that are raised automatically when specific
+    errors
+    occur. Examples include ZERO_DIVIDE, TOO_MANY_ROWS, and NO_DATA_FOUND.
+    <br>
+    <b>User-Defined Exceptions:</b> These are exceptions defined by the programmer to handle specific conditions or
+    errors
+    within the program.
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    BEGIN<br>
+    -- PL/SQL block<br>
+    EXCEPTION<br>
+    WHEN exception1 THEN<br>
+    -- Handling code for exception1<br>
+    WHEN exception2 THEN<br>
+    -- Handling code for exception2<br>
+    WHEN OTHERS THEN<br>
+    -- Handling code for any other unhandled exception<br>
+    END<br><br>
+</body>
+
+</html>

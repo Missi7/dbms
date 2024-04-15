@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Explicit Cursors</b></h3>
+    These cursors are explicitly declared and defined within the PL/SQL code. They provide more control over the result
+    set processing and are suitable for complex queries or scenarios where precise control over data retrieval is
+    required. Explicit cursors are declared using the DECLARE, OPEN, FETCH, and CLOSE statements.
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax : Declaration</b></h3>
+    CURSOR cursor_name IS statement;
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax : Opening</b></h3>
+    OPEN cursor_name;
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax : Fetch</b></h3>
+    FETCH cursor_name INTO variable_name;
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax : Closing</b></h3>
+    CLOSE cursor_name;
+    <br><br>
+    <h3 style="text-align: center;"><b>Example Program</b></h3>
+    <b>Example Table: Student</b><br><br>
+    <table>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>PhoneNo</th>
+            <th>Class</th>
+            <td>Marks</td>
+            <td>City</td>
+        </tr>
+        <tr>
+            <td>4226</td>
+            <td>Misbah</td>
+            <td>9465470628</td>
+            <td>BCA-I</td>
+            <td>374</td>
+            <td>Chandigarh</td>
+        </tr>
+        <tr>
+            <td>4258</td>
+            <td>Aman</td>
+            <td>NULL</td>
+            <td>BCA-I</td>
+            <td>284</td>
+            <td>Punjab</td>
+        </tr>
+        <tr>
+            <td>4211</td>
+            <td>Neha</td>
+            <td>1656746517</td>
+            <td>BCA-I</td>
+            <td>294</td>
+            <td>Punjab</td>
+        </tr>
+        <tr>
+            <td>4237</td>
+            <td>Pawan Kumar</td>
+            <td>123456789</td>
+            <td>BCA-I</td>
+            <td>274</td>
+            <td>Punjab</td>
+        </tr>
+    </table>
+    <br><br>
+    DECLARE<br>
+    name student.Name%TYPE;<br>
+    CURSOR passed IS SELECT Name FROM student WHERE marks > 250;<br>
+    BEGIN<br>
+    OPEN passed;<br>
+    LOOP<br>
+    FETCH passed into name;<br>
+    EXIT WHEN passed%NOTFOUND;<br>
+    dbms_output.put_line(name);<br>
+    END LOOP;<br>
+    CLOSE passed;<br>
+    END;<br><br>
+    <h3 style="text-align: center;"><b>Output</b></h3>
+    Misbah<br>
+    Neha<br><br>
+</body>
+
+</html>

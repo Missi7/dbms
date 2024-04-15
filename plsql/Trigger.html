@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+
+        }
+
+        table {
+            width: 80%;
+            margin-left: 100px;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;"><b>Triggers in PL/SQL</b></h3>
+    Triggers in SQL are special types of stored procedures that are automatically executed or fired when certain events
+    occur in the database. These events can include data manipulation operations like INSERT, UPDATE, DELETE, or DDL
+    (Data Definition Language) operations like CREATE, ALTER, or DROP.
+    <br><br>
+    Triggers can be used to enforce business rules, maintain data integrity, and automate database operations. Here's an
+    overview of triggers:
+    <br><br>
+    <h3 style="text-align: center;"><b>Syntax</b></h3>
+    CREATE [OR REPLACE] TRIGGER trigger_name<br>
+    {BEFORE | AFTER} {INSERT | UPDATE | DELETE | [DDL_EVENT]}<br>
+    ON table_name<br>
+    [FOR EACH ROW]<br>
+    DECLARE<br>
+    -- Declarations<br>
+    BEGIN<br>
+    -- Trigger Logic<br>
+    END;<br><br>
+    <h3 style="text-align: center;"><b>Trigger Events:</b></h3>
+    <table>
+        <tr>
+            <b>
+                <th>Event</th>
+                <th>Description</th>
+            </b>
+        </tr>
+        <tr>
+            <td>INSERT </td>
+            <td>Triggered before or after inserting a new row into a table.</td>
+        </tr>
+        <tr>
+            <td>UPDATE </td>
+            <td>Triggered before or after updating existing rows in a table.</td>
+        </tr>
+        <tr>
+            <td>DELETE </td>
+            <td>Triggered before or after deleting rows from a table.</td>
+        </tr>
+        <tr>
+            <td>CREATE, ALTER, DROP </td>
+            <td>Triggered before or after executing DDL statements.</td>
+        </tr>
+    </table>
+    <br><br>
+</body>
+
+</html>
